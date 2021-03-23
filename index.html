@@ -9,8 +9,175 @@
   <body>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+         <h3>Array methods</h3>
+         <p>Arrays provide a lot of methods.</p>
 
-    <h1>hello world 2</h1>
+         <p>Below are the most array methids you will use</p>
+        </article>
+      </section>
+
+      <section class="main-section" id="Add/remove_items">
+        <header>Add/remove items</header>
+        <article>
+          <p>We already know methods that add and remove items from the beginning or the end:</p>
+
+          <ul>
+            <li>arr.push(...items) – adds items to the end,</li>
+            <li>arr.pop() – extracts an item from the end,</li>
+            <li>arr.shift() – extracts an item from the beginning,</li>
+            <li>arr.unshift(...items) – adds items to the beginning.</li>
+          </ul>
+        </article>
+      </section>
+
+
+      <section class="main-section" id="splice">
+        <header>Splice</header>
+        <article>
+          <p>How to delete an element from the array?</p>
+          <p>The arrays are objects, so we can try to use delete:</p>
+
+          <code>let arr = ["I", "go", "home"];</code>
+          <br>
+          <code>delete arr[1]; // remove "go"</code><br>
+          <code>alert( arr[1] ); // undefined</code><br>
+          <code>// now arr = ["I",  , "home"];</code><br>
+          <code>alert( arr.length ); // 3</code><br>
+
+          <p>The syntax is:</p>
+          <code>arr.splice(start[, deleteCount, elem1, ..., elemN])</code><br>
+        </article>
+      </section>
+
+
+      <section class="main-section" id="slice"></section>
+      <header>Slice</header>
+      <article>
+        The method arr.slice is much simpler than similar-looking arr.splice.
+
+        
+        <p>The syntax is:</p>
+        <code>arr.slice([start], [end])</code>
+
+        <p>It returns a new array copying to it all items from index start to end (not including end). Both start and end can be negative, in that case position from array end is assumed.</p>
+      </article>
+
+      <section class="main-section" id="concat">
+        <header>Concat</header>
+        <p>The method arr.concat creates a new array that includes values from other arrays and additional items.</p>
+        <p>The syntax is:</p>
+
+        <code>arr.concat(arg1, arg2...)</code>
+        <p>It accepts any number of arguments – either arrays or values.
+
+          The result is a new array containing items from arr, then arg1, arg2 etc.
+          
+          If an argument argN is an array, then all its elements are copied. Otherwise, the argument itself is copied.</p>
+      </section>
+
+      <section class="main-section" id=Iterate:_forEach>
+        <header>Iterate: forEach</header>
+        <article>
+          <p>The arr.forEach method allows to run a function for every element of the array.</p>
+
+          <p>The syntax:</p>
+          <code>arr.forEach(function(item, index, array) {</code>
+          <code>// ... do something with item</code>
+          <code>});</code>
+
+          <p>Note: this is similar to for loop function</p>
+        </article>
+        </section>
+
+        <section class="main-section" id="filter"> 
+          <header>Filter</header>
+          <article>
+            <p>The find method looks for a single (first) element that makes the function return true.</p>
+            <p>The syntax is similar to find, but filter returns an array of all matching elements:</p>
+
+            <code>let results = arr.filter(function(item, index, array) {
+              // if true item is pushed to results and the iteration continues
+              // returns empty array if nothing found
+            });</code>
+          </article>
+        </section>
+
+
+
+        <section class="main-section" id="map">
+          <header>Map</header>
+          <article>
+            <p>The arr.map method is one of the most useful and often used.
+              It calls the function for each element of the array and returns the array of results.       
+            </p>
+            <p>The syntax is:</p>
+            <code>
+              let result = arr.map(function(item, index, array) {
+                // returns the new value instead of item
+              });
+            </code>
+          </article>
+        </section>
+
+        <section class="main-section" id="reverse">
+          <header>Reverse</header>
+          <p>The method arr.reverse reverses the order of elements in arr.</p>
+          <p>for example</p>
+          <code>
+            let arr = [1, 2, 3, 4, 5];
+          </code><br>
+          <code>arr.reverse();</code><br>
+          <code>alert( arr ); // 5,4,3,2,1</code>
+
+        </section>
+
+
+        <section class="main-section" id="split_and_join">
+          <header>Split and Join</header>
+          <article>
+            <p>Here’s the situation from real life. We are writing a messaging app, and the person enters the comma-delimited list of receivers: John, Pete, Mary. But for us an array of names would be much more comfortable than a single string. How to get it?</p>
+
+            <p>The str.split(delim) method does exactly that. It splits the string into an array by the given delimiter delim.</p>
+            <p>In the example below, we split by a comma followed by space:</p>
+
+            <code>let names = 'Bilbo, Gandalf, Nazgul';</code><br>
+            <code>let arr = names.split(', ');
+            </code><br>
+            <code>
+              for (let name of arr) {
+                alert( `A message to ${name}.` ); // A message to Bilbo  (and other names)
+              }</code><br>
+
+              <p>The split method has an optional second numeric argument – a limit on the array length. If it is provided, then the extra elements are ignored. In practice it is rarely used though:
+              </p>
+          </article>
+        </section>
+
+
+        <section class="main-section" id="Reference">
+          <header>Reference</header>
+          <article>
+            <ul>
+              <li>
+                All the content here is taken from this page
+                <a href="https://javascript.info/array-methods" target="_blank">Javascript.info</a>
+
+              </li>
+            </ul>
+          </article>
+
+        </section>
+
+        
+
+  
+    </main>
+
+    
     
     <script  src="js/index.js"></script>
   </body>
